@@ -1,12 +1,12 @@
 {
-  "sourceName": "Anime & Cartoons (Catalog Prototype)",
+  "sourceName": "Anime & Cartoons (Catalog v0.6)",
   "iconUrl": "https://raw.githubusercontent.com/github/explore/main/topics/anime/anime.png",
   "author": {
     "name": "Community starter",
     "icon": "https://github.githubassets.com/favicons/favicon.png"
   },
-  "description": "Curated catalog and optional licensed direct-link playback, with English dub preference. Requires source configuration.",
-  "version": "0.5.0",
+  "description": "Curated catalog with placeholder art. Playback requires verified authorized sources.",
+  "version": "0.6.0",
   "language": "English preferred; Japanese with English subtitles as fallback",
   "streamType": "MP4",
   "quality": "720p",
