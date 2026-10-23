@@ -12,7 +12,7 @@
   "quality": "720p",
   "baseUrl": "https://catalog.invalid/",
   "searchBaseUrl": "https://catalog.invalid/search?q=%s",
-  "scriptUrl": "REPLACE_WITH_YOUR_PUBLIC_RAW_MODULE_JS_URL",
+  "scriptUrl": "https://raw.githubusercontent.com/Entity4O4/KidsModuleSora-V-0.1/refs/heads/main/module.js",
   "type": "movies/shows/anime",
   "asyncJS": true,
   "streamAsyncJS": false,
