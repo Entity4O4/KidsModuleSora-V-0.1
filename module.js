@@ -17,7 +17,7 @@ var TEST_TITLE = 'Playback Test - Big Buck Bunny';
 // Direct MP4 test media from Blender Foundation. Requires network access.
 var OFFICIAL_EPISODES = {};
 OFFICIAL_EPISODES[TEST_TITLE] = [{number:'1',season:1,sources:[{
- url:'https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
+ url:'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
  audio:'en-official',provider:'Blender Foundation'
 }]}];
 function approvedEpisode(ep) {
