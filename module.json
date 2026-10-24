@@ -9,7 +9,7 @@
   "version": "0.1.4",
   "language": "English",
   "streamType": "MP4/HLS",
-  "quality": "720p",
+  "quality": "720p/1080p",
   "baseUrl": "https://catalog.invalid/",
   "searchBaseUrl": "https://catalog.invalid/search?q=%s",
   "scriptUrl": "https://raw.githubusercontent.com/Entity4O4/KidsModuleSora-V-0.1/refs/heads/main/module.js",
