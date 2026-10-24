@@ -3,12 +3,12 @@
   "iconUrl": "https://raw.githubusercontent.com/github/explore/main/topics/anime/anime.png",
   "author": {
     "name": "Community starter",
-    "icon": "https://github.com/Entity4O4/KidsModuleSora-V-0.1/blob/main/IMG_0141.jpeg"
+    "icon": "https://github.githubassets.com/favicons/favicon.png"
   },
   "description": "Curated catalog with placeholder art. Playback requires verified authorized sources.",
-  "version": "0.6.0",
-  "language": "English preferred; Japanese with English subtitles as fallback",
-  "streamType": "MP4",
+  "version": "0.1.4",
+  "language": "English",
+  "streamType": "MP4/HLS",
   "quality": "720p",
   "baseUrl": "https://catalog.invalid/",
   "searchBaseUrl": "https://catalog.invalid/search?q=%s",
