@@ -314,33 +314,59 @@ async function extractEpisodes(url) {
  return JSON.stringify(out);
 }
 
+// v1.2 — Audio preference and multiple stream support
+
+function streamDisplayName(source) {
+  if (source.test === true) {
+    return source.provider || 'Playback Test';
+  }
+
+  if (source.audio === 'en-official') {
+    return 'English Dub — Official';
+  }
+
+  if (source.audio === 'ja-en-sub') {
+    return 'Japanese Audio — English Subtitles';
+  }
+
+  return source.provider || 'Video';
+}
+
 async function extractStreamUrl(url) {
- var ep = episodeLookup(url);
+  var ep = episodeLookup(url);
 
- if (!ep) return null;
+  if (!ep) return null;
 
- var candidates = orderedCandidates(ep);
+  var candidates = orderedCandidates(ep);
 
- if (!candidates.length) return null;
+  if (!candidates.length) return null;
 
- var m = String(url || '').match(
-  /^https:\/\/catalog\.invalid\/episode\/(\d+)\/(\d+)$/
- );
+  var m = String(url || '').match(
+    /^https:\/\/catalog\.invalid\/episode\/(\d+)\/(\d+)$/
+  );
 
- var title = m ? SHOWS[Number(m[1])][0] : '';
+  if (!m) return null;
 
- // Preserve the known-working behavior for all existing titles.
- if (title !== MULTI_TEST_TITLE) {
-  return candidates[0].url;
- }
+  var i = Number(m[1]);
 
- // Test the structured response only on the new diagnostic title.
- return JSON.stringify({
-  streams: candidates.map(function(source) {
-   return {
-    title: source.provider || 'Video',
-    streamUrl: source.url
-   };
-  })
- });
+  if (i < 0 || i >= SHOWS.length) return null;
+
+  var title = SHOWS[i][0];
+
+  // Preserve the original single-stream behavior
+  // for the two existing playback tests.
+  if (title === TEST_TITLE || title === HLS_TEST_TITLE) {
+    return candidates[0].url;
+  }
+
+  // Show server selection for the multiple-stream test
+  // and future anime episodes.
+  return JSON.stringify({
+    streams: candidates.map(function(source) {
+      return {
+        title: streamDisplayName(source),
+        streamUrl: source.url
+      };
+    })
+  });
 }
