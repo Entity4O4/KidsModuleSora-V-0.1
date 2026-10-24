@@ -443,59 +443,6 @@ async function extractStreamUrl(url) {
 
   if (!ep) return null;
    
-   // EXPERIMENTATION — API connectivity test
-var testMatch = String(url || '').match(
-  /^https:\/\/catalog\.invalid\/episode\/(\d+)\/(\d+)$/
-);
-
-if (
-  testMatch &&
-  SHOWS[Number(testMatch[1])] &&
-  SHOWS[Number(testMatch[1])][0] === MULTI_TEST_TITLE
-) {
-  var result = await testInvidiousApi();
-
-return JSON.stringify({
-  streams: [{
-    title: result,
-    streamUrl: candidates[0].url
-  }]
-});
-}
-
-  var candidates = orderedCandidates(ep);
-
-  if (!candidates.length) return null;
-
-  var m = String(url || '').match(
-    /^https:\/\/catalog\.invalid\/episode\/(\d+)\/(\d+)$/
-  );
-
-  if (!m) return null;
-
-  var i = Number(m[1]);
-
-  if (i < 0 || i >= SHOWS.length) return null;
-
-  var title = SHOWS[i][0];
-
-  // Preserve the original single-stream behavior
-  // for the two existing playback tests.
-  if (title === TEST_TITLE || title === HLS_TEST_TITLE) {
-    return candidates[0].url;
-  }
-
-  // Show server selection for the multiple-stream test
-  // and future anime episodes.
-  return JSON.stringify({
-    streams: candidates.map(function(source) {
-      return {
-        title: streamDisplayName(source),
-        streamUrl: source.url
-      };
-    })
-  });
-}
 // EXPERIMENTATION — Invidious API diagnostic
 async function testInvidiousApi() {
   try {
