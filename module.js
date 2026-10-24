@@ -146,6 +146,10 @@ OFFICIAL_EPISODES[MULTI_TEST_TITLE] = [
 // v1.3 — Authorized source registry
 // This is source metadata, NOT a collection of playable episodes.
 
+// v1.3 — Complete source registry
+// Region codes are investigation targets, NOT confirmed availability.
+// Empty arrays mean no source has been verified yet.
+
 var SOURCE_REGISTRY = {
   'Naruto': [
     {
@@ -177,16 +181,43 @@ var SOURCE_REGISTRY = {
     }
   ],
 
+  'Naruto Movies': [],
+
+  'Dragon Ball': [],
+  'Dragon Ball Z': [],
+  'Dragon Ball Kai': [],
+  'Dragon Ball Super': [],
+  'Dragon Ball Daima': [],
+  'Dragon Ball Movies': [],
+
+  'Demon Slayer': [],
+  'Demon Slayer Movies': [],
+
+  'Pokémon': [],
+  'Pokémon Movies': [],
+
+  'Beyblade': [],
+  'Beyblade Metal Fusion': [],
+  'Beyblade Burst': [],
+  'Beyblade X': [],
+  'Beyblade Movies': [],
+
   'Ninjago': [],
   'Ninjago Dragons Rising': [],
+  'Ninjago Movies': [],
+
   'Sonic Boom': [],
   'Sonic Prime': [],
+  'Sonic Movies': [],
+
   'Trollhunters': [],
   '3Below': [],
   'Wizards Tales of Arcadia': [],
-  'Transformers Prime': []
-};
+  'Trollhunters Rise of the Titans': [],
 
+  'Transformers Prime': [],
+  'Transformers Prime Beast Hunters Predacons Rising': []
+};
 // Returns only sources explicitly verified for in-app playback.
 function playableSourcesFor(title, region) {
   var entries = SOURCE_REGISTRY[title] || [];
