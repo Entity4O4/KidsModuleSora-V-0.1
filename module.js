@@ -476,3 +476,21 @@ async function extractStreamUrl(url) {
     })
   });
 }
+// EXPERIMENTATION — Invidious API diagnostic
+async function testInvidiousApi() {
+  try {
+    var response = await fetch(
+      'https://yt.chocolatemoo53.com/api/v1/videos/aqz-KE-bpKQ'
+    );
+
+    if (!response.ok) return 'HTTP ' + response.status;
+
+    var data = await response.json();
+
+    return data.hlsUrl
+      ? 'API OK — HLS URL FOUND'
+      : 'API OK — NO HLS URL';
+  } catch (error) {
+    return 'API ERROR: ' + String(error);
+  }
+}
