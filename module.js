@@ -45,7 +45,8 @@ var SHOWS = [
  ['Transformers Prime Beast Hunters Predacons Rising','Transformers Prime'],
 
   ['Playback Test - Flower MP4','Playback Test'],
- ['Playback Test - Big Buck Bunny HLS','Playback Test']
+  ['Playback Test - Big Buck Bunny HLS','Playback Test'],
+  ['Playback Test - Multiple Streams','Playback Test']
 ];
 
 var COVER =
@@ -118,6 +119,26 @@ OFFICIAL_EPISODES[HLS_TEST_TITLE] = [
     url: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
     test: true,
     provider: 'Mux public HLS test stream'
+   }
+  ]
+ }
+];
+var MULTI_TEST_TITLE = 'Playback Test - Multiple Streams';
+
+OFFICIAL_EPISODES[MULTI_TEST_TITLE] = [
+ {
+  number: '1',
+  season: 1,
+  sources: [
+   {
+    url: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
+    test: true,
+    provider: 'MP4 test'
+   },
+   {
+    url: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
+    test: true,
+    provider: 'HLS test'
    }
   ]
  }
@@ -300,5 +321,26 @@ async function extractStreamUrl(url) {
 
  var candidates = orderedCandidates(ep);
 
- return candidates.length ? candidates[0].url : null;
+ if (!candidates.length) return null;
+
+ var m = String(url || '').match(
+  /^https:\/\/catalog\.invalid\/episode\/(\d+)\/(\d+)$/
+ );
+
+ var title = m ? SHOWS[Number(m[1])][0] : '';
+
+ // Preserve the known-working behavior for all existing titles.
+ if (title !== MULTI_TEST_TITLE) {
+  return candidates[0].url;
+ }
+
+ // Test the structured response only on the new diagnostic title.
+ return JSON.stringify({
+  streams: candidates.map(function(source) {
+   return {
+    title: source.provider || 'Video',
+    streamUrl: source.url
+   };
+  })
+ });
 }
