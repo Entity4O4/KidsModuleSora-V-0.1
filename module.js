@@ -44,7 +44,8 @@ var SHOWS = [
  ['Transformers Prime','Transformers Prime'],
  ['Transformers Prime Beast Hunters Predacons Rising','Transformers Prime'],
 
- ['Playback Test - Flower MP4','Playback Test']
+  ['Playback Test - Flower MP4','Playback Test'],
+ ['Playback Test - Big Buck Bunny HLS','Playback Test']
 ];
 
 var COVER =
