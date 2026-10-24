@@ -106,6 +106,22 @@ OFFICIAL_EPISODES[TEST_TITLE] = [
  * Only direct HTTPS MP4/HLS links pass this check.
  * A normal webpage URL is not a video stream.
  */
+// v1.0 — Public HLS playback diagnostic
+var HLS_TEST_TITLE = 'Playback Test - Big Buck Bunny HLS';
+
+OFFICIAL_EPISODES[HLS_TEST_TITLE] = [
+ {
+  number: '1',
+  season: 1,
+  sources: [
+   {
+    url: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
+    test: true,
+    provider: 'Mux public HLS test stream'
+   }
+  ]
+ }
+];
 function approvedEpisode(ep) {
  if (!ep) return false;
 
