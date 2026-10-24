@@ -442,22 +442,37 @@ async function extractStreamUrl(url) {
   var ep = episodeLookup(url);
 
   if (!ep) return null;
-   
-// EXPERIMENTATION — Invidious API diagnostic
-async function testInvidiousApi() {
-  try {
-    var response = await fetch(
-      'https://yt.chocolatemoo53.com/api/v1/videos/aqz-KE-bpKQ'
-    );
 
-    if (!response.ok) return 'HTTP ' + response.status;
+  var candidates = orderedCandidates(ep);
 
-    var data = await response.json();
+  if (!candidates.length) return null;
 
-    return data.hlsUrl
-      ? 'API OK — HLS URL FOUND'
-      : 'API OK — NO HLS URL';
-  } catch (error) {
-    return 'API ERROR: ' + String(error);
+  var m = String(url || '').match(
+    /^https:\/\/catalog\.invalid\/episode\/(\d+)\/(\d+)$/
+  );
+
+  if (!m) return null;
+
+  var i = Number(m[1]);
+
+  if (i < 0 || i >= SHOWS.length) return null;
+
+  var title = SHOWS[i][0];
+
+  // Preserve the original single-stream behavior
+  // for the two existing playback tests.
+  if (title === TEST_TITLE || title === HLS_TEST_TITLE) {
+    return candidates[0].url;
   }
+
+  // Show server selection for the multiple-stream test
+  // and future anime episodes.
+  return JSON.stringify({
+    streams: candidates.map(function(source) {
+      return {
+        title: streamDisplayName(source),
+        streamUrl: source.url
+      };
+    })
+  });
 }
