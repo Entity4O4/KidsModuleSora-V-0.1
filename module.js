@@ -322,12 +322,12 @@ function streamDisplayName(source) {
   }
 
   if (source.audio === 'en-official') {
-    return 'English Dub — Official';
-  }
+  return '🇬🇧 English Dub';
+}
 
-  if (source.audio === 'ja-en-sub') {
-    return 'Japanese Audio — English Subtitles';
-  }
+if (source.audio === 'ja-en-sub') {
+  return '🇯🇵 Japanese Sub';
+}
 
   return source.provider || 'Video';
 }
