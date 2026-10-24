@@ -173,9 +173,15 @@ function catalogUrl(i) {
 }
 
 function catalogIndex(url) {
- var m = String(url || '').match(
-  /^https:\/\/catalog\.invalid\/title\/(\d+)$/
- );
+ var text = String(url || '');
+
+ var m = text.match(/#catalog-(\d+)$/);
+
+ if (!m) {
+  m = text.match(
+   /^https:\/\/catalog\.invalid\/title\/(\d+)$/
+  );
+ }
 
  var n = m ? Number(m[1]) : -1;
 
