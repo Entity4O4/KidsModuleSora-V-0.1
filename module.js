@@ -58,10 +58,19 @@ var TEST_TITLE = 'Playback Test - Flower MP4';
  */
 var OFFICIAL_GUIDES = {
  'Naruto':
+  'https://naruto-official.com/en/anime/naruto1',
+
+ 'Naruto Shippuden':
+  'https://naruto-official.com/en/anime/naruto2',
+
+ 'Boruto':
+  'https://naruto-official.com/en/anime/boruto',
+
+ 'Naruto Movies':
   'https://naruto-official.com/en/anime',
 
  'Pokémon':
-  'https://www.pokemon.com/es/dibujos-animados/donde-ver-los-episodios-y-peliculas-pokemon',
+  'https://parents.pokemon.com/es-es/animation/',
 
  'Demon Slayer':
   'https://demonslayer-anime.com/'
