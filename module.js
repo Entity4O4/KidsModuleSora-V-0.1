@@ -442,6 +442,26 @@ async function extractStreamUrl(url) {
   var ep = episodeLookup(url);
 
   if (!ep) return null;
+   
+   // EXPERIMENTATION — API connectivity test
+var testMatch = String(url || '').match(
+  /^https:\/\/catalog\.invalid\/episode\/(\d+)\/(\d+)$/
+);
+
+if (
+  testMatch &&
+  SHOWS[Number(testMatch[1])] &&
+  SHOWS[Number(testMatch[1])][0] === MULTI_TEST_TITLE
+) {
+  var result = await testInvidiousApi();
+
+return JSON.stringify({
+  streams: [{
+    title: result,
+    streamUrl: candidates[0].url
+  }]
+});
+}
 
   var candidates = orderedCandidates(ep);
 
