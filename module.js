@@ -160,6 +160,15 @@ function availableEntries(title) {
 }
 
 function catalogUrl(i) {
+ var title = SHOWS[i][0];
+ var group = SHOWS[i][1];
+
+ var guide = OFFICIAL_GUIDES[title] || OFFICIAL_GUIDES[group];
+
+ if (guide) {
+  return guide + '#catalog-' + i;
+ }
+
  return 'https://catalog.invalid/title/' + i;
 }
 
