@@ -218,7 +218,7 @@ async function extractDetails(url) {
    ' — catalog entry. Episodes will appear when compatible, ' +
    'authorized direct video streams are configured.';
 
-  var guide = OFFICIAL_GUIDES[group];
+  var guide = OFFICIAL_GUIDES[title] || OFFICIAL_GUIDES[group];
 
   if (guide) {
    description += ' Official information/viewing guide: ' + guide;
