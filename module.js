@@ -143,6 +143,62 @@ OFFICIAL_EPISODES[MULTI_TEST_TITLE] = [
   ]
  }
 ];
+// v1.3 — Authorized source registry
+// This is source metadata, NOT a collection of playable episodes.
+
+var SOURCE_REGISTRY = {
+  'Naruto': [
+    {
+      provider: 'Naruto Official',
+      region: ['ES', 'GB'],
+      pageUrl: 'https://naruto-official.com/en/anime/naruto1',
+      playback: 'external',
+      verifiedStream: false
+    }
+  ],
+
+  'Naruto Shippuden': [
+    {
+      provider: 'Naruto Official',
+      region: ['ES', 'GB'],
+      pageUrl: 'https://naruto-official.com/en/anime/naruto2',
+      playback: 'external',
+      verifiedStream: false
+    }
+  ],
+
+  'Boruto': [
+    {
+      provider: 'Naruto Official',
+      region: ['ES', 'GB'],
+      pageUrl: 'https://naruto-official.com/en/anime/boruto',
+      playback: 'external',
+      verifiedStream: false
+    }
+  ],
+
+  'Ninjago': [],
+  'Ninjago Dragons Rising': [],
+  'Sonic Boom': [],
+  'Sonic Prime': [],
+  'Trollhunters': [],
+  '3Below': [],
+  'Wizards Tales of Arcadia': [],
+  'Transformers Prime': []
+};
+
+// Returns only sources explicitly verified for in-app playback.
+function playableSourcesFor(title, region) {
+  var entries = SOURCE_REGISTRY[title] || [];
+
+  return entries.filter(function(source) {
+    return source.verifiedStream === true &&
+      source.playback === 'direct' &&
+      source.region.indexOf(region) !== -1 &&
+      typeof source.streamUrl === 'string' &&
+      /^https:\/\//.test(source.streamUrl);
+  });
+}
 function approvedEpisode(ep) {
  if (!ep) return false;
 
