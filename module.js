@@ -1,4 +1,4 @@
-/* Anime & Cartoons v0.8
+/* Anime & Cartoons v1.4
    Curated catalog + official viewing guides + direct-MP4 diagnostic.
    The diagnostic is a sample video, NOT an anime episode.
 */
@@ -107,7 +107,7 @@ OFFICIAL_EPISODES[TEST_TITLE] = [
  * Only direct HTTPS MP4/HLS links pass this check.
  * A normal webpage URL is not a video stream.
  */
-// v1.0 — Public HLS playback diagnostic
+// v1.4 — Public HLS playback diagnostic
 var HLS_TEST_TITLE = 'Playback Test - Big Buck Bunny HLS';
 
 OFFICIAL_EPISODES[HLS_TEST_TITLE] = [
@@ -143,10 +143,10 @@ OFFICIAL_EPISODES[MULTI_TEST_TITLE] = [
   ]
  }
 ];
-// v1.3 — Authorized source registry
+// v1.4 — Authorized source registry
 // This is source metadata, NOT a collection of playable episodes.
 
-// v1.3 — Complete source registry
+// v1.4 — Complete source registry
 // Region codes are investigation targets, NOT confirmed availability.
 // Empty arrays mean no source has been verified yet.
 
@@ -401,22 +401,41 @@ async function extractEpisodes(url) {
  return JSON.stringify(out);
 }
 
-// v1.2 — Audio preference and multiple stream support
+// v1.4 — Audio preference and multiple stream support
 
+// v1.4 — Verified language and quality labels
 function streamDisplayName(source) {
   if (source.test === true) {
     return source.provider || 'Playback Test';
   }
 
+  var label;
+
   if (source.audio === 'en-official') {
-  return '🇬🇧 English Dub';
-}
+    label = '🇬🇧 English Dub';
+  } else if (source.audio === 'ja-en-sub') {
+    label = '🇯🇵 Japanese Sub';
+  } else {
+    label = source.provider || 'Video';
+  }
 
-if (source.audio === 'ja-en-sub') {
-  return '🇯🇵 Japanese Sub';
-}
+  var allowedQualities = [
+    '2160p',
+    '1440p',
+    '1080p',
+    '720p',
+    '480p',
+    '360p'
+  ];
 
-  return source.provider || 'Video';
+  if (
+    source.qualityVerified === true &&
+    allowedQualities.indexOf(source.quality) !== -1
+  ) {
+    label += ' · ' + source.quality;
+  }
+
+  return label;
 }
 
 async function extractStreamUrl(url) {
