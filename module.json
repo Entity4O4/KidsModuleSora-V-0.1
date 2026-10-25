@@ -1,5 +1,5 @@
 {
-  "sourceName": "Verified safe NIGHTLY RELEASE (Catalog v0.1.4)",
+  "sourceName": "Verified safe HLS-FETCH (Catalog v0.1.4)",
   "iconUrl": "https://raw.githubusercontent.com/github/explore/main/topics/anime/anime.png",
   "author": {
     "name": "It's Safe, Undersood?",
@@ -12,7 +12,7 @@
   "quality": "720p/1080p",
   "baseUrl": "https://catalog.invalid/",
   "searchBaseUrl": "https://catalog.invalid/search?q=%s",
-  "scriptUrl": "https://raw.githubusercontent.com/Entity4O4/KidsModuleSora-V-0.1/refs/heads/Experimentation/module.js",
+  "scriptUrl": "https://raw.githubusercontent.com/Entity4O4/KidsModuleSora-V-0.1/refs/heads/HLS-FETCH/module.js",
   "type": "movies/shows/anime",
   "asyncJS": true,
   "streamAsyncJS": true,
