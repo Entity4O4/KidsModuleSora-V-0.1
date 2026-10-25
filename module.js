@@ -431,6 +431,29 @@ function streamDisplayName(source) {
   return label;
 }
 
+async function getFreshInvidiousHLS() {
+  var apiUrl =
+    'https://yt.chocolatemoo53.com/api/v1/videos/aqz-KE-bpKQ';
+
+  try {
+    var response = await fetchv2(apiUrl, {}, 'GET', null);
+
+    if (!response) return null;
+
+    if (response.status >= 400) return null;
+
+    var text = await response.text();
+    var data = JSON.parse(text);
+
+    if (!data.hlsUrl) return null;
+
+    return data.hlsUrl;
+  } catch (error) {
+    console.log('Invidious refresh failed: ' + error);
+    return null;
+  }
+}
+
 async function extractStreamUrl(url) {
   var ep = episodeLookup(url);
 
