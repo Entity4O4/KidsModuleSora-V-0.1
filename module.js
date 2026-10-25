@@ -129,7 +129,7 @@ OFFICIAL_EPISODES[MULTI_TEST_TITLE] = [
     provider: 'MP4 test'
    },
    {
-    url: 'https://yt.chocolatemoo53.com/api/manifest/hls_variant/expire/1792866794/ei/iqXcauKDDMu5ir4P1MTHwQo/ip/2602%3Afb54%3A1434%3A60cc%3Aff22%3Adbf5%3Ac2%3A2c05/id/6aacfe284f9ba4a4/source/youtube/requiressl/yes/xpc/EgVo2aDSNQ%3D%3D/playback_host/rr5---sn-vgqsknde.googlevideo.com/cps/507/met/1792845194%2C/mh/aP/mm/18%2C29/mn/sn-vgqsknde%2Csn-vgqsrn6y/ms/aub%2Crdu/mv/m/mvi/5/pl/43/rms/aub%2Caub/hfr/1/demuxed/1/tts_caps/1/maudio/1/initcwndbps/2393125/bui/AWzQHwo4cslCpP-EiDttlp7BnrAXa42-_OYHVGdsSuaLpvibdn7RWtwnl9_7nnA-ClxyCvY7rQ-kFQtY/spc/mpRQ_8hQaAJjt6kfZCIm1YYUTCXbwyHsb5W8r9aIJsfu9-yohEyMKESSI4K2mOo/vprv/1/go/1/rqh/5/epbp/1/mt/1792844702/fvip/2/nvgoi/1/short_key/1/ncsapi/1/keepalive/yes/fexp/51565115/dover/13/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Chfr%2Cdemuxed%2Ctts_caps%2Cmaudio%2Cbui%2Cspc%2Cvprv%2Cgo%2Crqh%2Citag%2Cplaylist_type/sig/AE0s2JYwRQIgDjYDLzBXvPhfmoWH0YNMeBMr0GiH-evqujxNXCxo7d4CIQDokH0V4Kgac2fTF-uQOcyLoccdQH9ei56TUhTa79UYiQ%3D%3D/lsparams/playback_host%2Ccps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps/lsig/APaTxxMwRQIgCuuN_jvCRh6u27SbAA8FpW8iIptJQuaIkQvKpZBz3goCIQCIfEz7v9UfHG5m8cnZB-gU5PEZWCa7OIhpAGVgGnU_VA%3D%3D/file/index.m3u8',
+  url: 'https://example.invalid/old-stream-test.m3u8',
     test: true,
     provider: 'HLS test'
    }
