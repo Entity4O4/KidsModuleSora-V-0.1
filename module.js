@@ -474,6 +474,22 @@ async function extractStreamUrl(url) {
   if (i < 0 || i >= SHOWS.length) return null;
 
   var title = SHOWS[i][0];
+   
+   // Refresh the Invidious URL before showing stream choices.
+if (title === MULTI_TEST_TITLE) {
+  var freshHLS = await getFreshInvidiousHLS();
+
+  if (freshHLS) {
+    candidates = candidates.map(function(source) {
+      if (source.provider === 'HLS test') {
+        var updated = Object.assign({}, source);
+        updated.url = freshHLS;
+        return updated;
+      }
+      return source;
+    });
+  }
+}
 
 // Refresh the Invidious stream for the multiple-stream test.
 if (title === 'Playback Test - Multiple Streams') {
