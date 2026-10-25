@@ -4,49 +4,42 @@
 */
 
 var SHOWS = [
- ['Naruto','Naruto'],
- ['Naruto Shippuden','Naruto'],
- ['Boruto','Naruto'],
- ['Naruto Movies','Naruto'],
+  ['Ninjago', 'Ninjago'],
+  ['Ninjago Dragons Rising', 'Ninjago'],
+  ['Ninjago Movies', 'Ninjago'],
 
- ['Dragon Ball','Dragon Ball'],
- ['Dragon Ball Z','Dragon Ball'],
- ['Dragon Ball Kai','Dragon Ball'],
- ['Dragon Ball Super','Dragon Ball'],
- ['Dragon Ball Daima','Dragon Ball'],
- ['Dragon Ball Movies','Dragon Ball'],
+  ['Pokémon', 'Pokémon'],
+  ['Pokémon Movies', 'Pokémon'],
 
- ['Demon Slayer','Demon Slayer'],
- ['Demon Slayer Movies','Demon Slayer'],
+  ['Naruto', 'Naruto'],
+  ['Naruto Shippuden', 'Naruto'],
+  ['Naruto Movies', 'Naruto'],
 
- ['Pokémon','Pokémon'],
- ['Pokémon Movies','Pokémon'],
+  ['Dragon Ball', 'Dragon Ball'],
+  ['Dragon Ball Z', 'Dragon Ball'],
+  ['Dragon Ball Super', 'Dragon Ball'],
+  ['Dragon Ball Movies', 'Dragon Ball'],
 
- ['Beyblade','Beyblade'],
- ['Beyblade Metal Fusion','Beyblade'],
- ['Beyblade Burst','Beyblade'],
- ['Beyblade X','Beyblade'],
- ['Beyblade Movies','Beyblade'],
+  ['Demon Slayer', 'Demon Slayer'],
+  ['Demon Slayer Movies', 'Demon Slayer'],
 
- ['Ninjago','Ninjago'],
- ['Ninjago Dragons Rising','Ninjago'],
- ['Ninjago Movies','Ninjago'],
+  ['Sonic Boom', 'Sonic'],
+  ['Sonic X', 'Sonic'],
+  ['Sonic Prime', 'Sonic'],
+  ['Sonic Mania Adventures', 'Sonic'],
+  ['Sonic Movies', 'Sonic'],
 
- ['Sonic Boom','Sonic'],
- ['Sonic Prime','Sonic'],
- ['Sonic Movies','Sonic'],
+  ['Transformers Prime', 'Transformers Prime'],
+  ['Transformers Prime Beast Hunters Predacons Rising', 'Transformers Prime'],
 
- ['Trollhunters','Tales of Arcadia'],
- ['3Below','Tales of Arcadia'],
- ['Wizards Tales of Arcadia','Tales of Arcadia'],
- ['Trollhunters Rise of the Titans','Tales of Arcadia'],
+  ['Trollhunters', 'Tales of Arcadia'],
+  ['3Below', 'Tales of Arcadia'],
+  ['Wizards Tales of Arcadia', 'Tales of Arcadia'],
+  ['Trollhunters Rise of the Titans', 'Tales of Arcadia'],
 
- ['Transformers Prime','Transformers Prime'],
- ['Transformers Prime Beast Hunters Predacons Rising','Transformers Prime'],
-
-  ['Playback Test - Flower MP4','Playback Test'],
-  ['Playback Test - Big Buck Bunny HLS','Playback Test'],
-  ['Playback Test - Multiple Streams','Playback Test']
+  ['Playback Test - Flower MP4', 'Playback Test'],
+  ['Playback Test - Big Buck Bunny HLS', 'Playback Test'],
+  ['Playback Test - Multiple Streams', 'Playback Test']
 ];
 
 var COVER =
